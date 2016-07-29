@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FishMarket</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <p><%= @current_user.name if !@current_user.nil? %></p>
+  <% if !@current_user.nil? %>
+  <p><%= link_to 'Log_out', logout_path, method: :delete %></p>
+  <% end %>
+<%= yield %>
+</body>
+</html>

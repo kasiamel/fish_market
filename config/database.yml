@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: fish_market_development
+
+test:
+  <<: *default
+  database: fish_market_test
+
+production:
+  <<: *default
+  database: fish_market_production
+  username: fish_market
+  password: <%= ENV['FISH_MARKET_DATABASE_PASSWORD'] %>

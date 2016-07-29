@@ -1,0 +1,13 @@
+<h1>FISH MARKET</h1>
+<p><%= link_to 'Register', new_user_path if @current_user.nil? %></p>
+<p><%= link_to 'Login', login_path if @current_user.nil?%></p>
+
+<% @fish.each do |fish| %>
+  <p><%= link_to "#{fish.name}"  %></p>
+<% end %>
+
+<% @offers.each do |offer| %>
+  <p><%= offer.timetable.day %>, <%= offer.fish.name %>, <%= offer.quantity %>, <%= offer.min_price %>
+    <%= link_to 'Show details' %>
+    <%= link_to 'Make an offer' %></p>
+<% end %>
