@@ -1,0 +1,14 @@
+<%= form_for(@purchase_offer, url: offer_purchase_offers_path) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.text_field :price, class: "form-control" %>
+  </div>
+
+  <%= f.submit 'Make an offer', class: "btn btn-primary btn-block" %>
+<% end %>

@@ -1,0 +1,27 @@
+<% flash.each do |key,value| %>
+  <% if key == "success" %> 
+
+    <div class="alert alert-success" role="alert">
+      <p><%= content_tag(:div, value, :class => "flash#{key}") %></p>
+    </div>
+
+  <% elsif key == "danger" || key == "error" %>
+
+    <div class="alert alert-danger" role="alert">
+      <p><%= content_tag(:div, value, :class => "flash#{key}") %></p>
+    </div>
+
+  <% elsif key == "info" %>
+
+    <div class="alert alert-info" role="alert">
+      <p><%= content_tag(:div, value, :class => "flash#{key}") %></p>
+    </div>
+
+  <% elsif key == "warning" %>
+
+    <div class="alert alert-warning" role="alert">
+      <p><%= content_tag(:div, value, :class =>  "flash#{key}") %></p>
+    </div>
+    
+  <% end %>
+<% end %>

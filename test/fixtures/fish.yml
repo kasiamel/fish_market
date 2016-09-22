@@ -1,9 +1,9 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+tuna:
+  name: Tuna
+  image: tuna_image
+  description: tuna_description
 
-one:
-  name: MyString
-  image: MyString
-
-two:
-  name: MyString
-  image: MyString
+mackerel:
+  name: Mackerel
+  image: mackerel_image
+  description: mackerel_description

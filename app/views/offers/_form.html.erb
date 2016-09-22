@@ -1,0 +1,31 @@
+<%= form_for(@offer) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :fish_id %>
+    <%= f.collection_select(:fish_id, Fish.all, :id, :name) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :min_price %>
+    <%= f.text_field :min_price, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :timetable_id %>
+    <%= f.collection_select(:timetable_id, Timetable.all, :id, :day) %>
+  </div>
+
+    <%= f.submit 'Save', class: "btn btn-primary btn-block"  %>
+<% end %>
+
+<div class="row">
+  <div class="col-sm-6">
+  </div>
+</div>
+
+<%= link_to "Back to Home Page", root_path, class: "btn btn-warning btn-block" %>

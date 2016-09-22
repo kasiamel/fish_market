@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.fish-market-navbar-brand {
+  color: black !important;
+  font-size: 45px;
+  font-family: 'Oswald', sans-serif;
+}

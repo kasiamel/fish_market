@@ -1,0 +1,32 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <div class="navbar-brand">
+        <%= link_to 'FISH MARKET', root_path, class: "navbar-brand fish-market-navbar-brand" %>
+      </div>
+    </div>
+
+    <div class="navbar-text navbar-right">
+      <% if !@current_user.nil? %>
+
+        <div class="btn-group">       
+          <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= @current_user.name %> <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Settings", edit_user_path(@current_user) %></li>
+          </ul>
+        </div>
+
+        <%=link_to 'Your offers', purchase_offers_path, class: "btn btn-primary navbar-btn" %>
+        <%= link_to 'Log_out', logout_path, class: "btn btn-danger navbar-btn", method: :delete %>
+      <% elsif @current_user.nil? %>
+        <%= link_to 'Register', new_user_path, class: "btn btn-success navbar-btn" %>
+        <%= link_to 'Login', login_path, class: "btn btn-warning navbar-btn" %>
+      <% end %>
+
+    </div>
+
+  </div>
+</nav>

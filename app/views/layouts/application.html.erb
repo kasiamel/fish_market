@@ -7,10 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p><%= @current_user.name if !@current_user.nil? %></p>
-  <% if !@current_user.nil? %>
-  <p><%= link_to 'Log_out', logout_path, method: :delete %></p>
-  <% end %>
-<%= yield %>
+
+  <%= render 'shared/nav' %>
+  <%= render 'shared/flash_messages' if !flash.empty? %>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
 </body>
 </html>

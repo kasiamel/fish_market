@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+
+    <h1>List of Your Purchase Offers</h1>
+
+    <table class="table">
+      <tr>
+        <th>Fish</th>
+        <th>Market Day</th>
+        <th>Your Quantity</th>
+        <th>Your Price</th>
+        <th>Date Of An Offer</th>
+      </tr>
+    <% @purchase_offers.each do |purchase_offer| %>
+      <tr>
+        <td><%= purchase_offer.offer.fish.name %></td>
+        <td><%= purchase_offer.offer.timetable.day %></td>
+        <td><%= purchase_offer.quantity %></td>
+        <td><%= purchase_offer.price %></td>
+        <td><%= purchase_offer.created_at %></td>
+      <tr>
+    <% end %>
+    </table>
+
+    <%= link_to "Back to Home Page", root_path, class: "btn btn-warning btn-block" %>
+  </div>
+</div>
